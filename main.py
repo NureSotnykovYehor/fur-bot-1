@@ -166,9 +166,9 @@ def handle_other(message):
 def handle_kitchen_facade(message):
     user_data[message.chat.id]['selected_facade'] = message.text
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    button1 = types.KeyboardButton("A")
-    button2 = types.KeyboardButton("B")
-    button3 = types.KeyboardButton("C")
+    button1 = types.KeyboardButton("HPL")
+    button2 = types.KeyboardButton("Акрилова")
+    button3 = types.KeyboardButton("Кварцова")
     markup.add(button1, button2, button3)
     bot.send_message(message.chat.id, "Оберіть тип стільниці:", reply_markup=markup)
     bot.register_next_step_handler(message, handle_kitchen_table_type)
@@ -234,9 +234,9 @@ def handle_closet_furniture_quality(message):
 def handle_delivery_date(message):
     user_data[message.chat.id]['delivery_date'] = message.text
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    button1 = types.KeyboardButton("X")
-    button2 = types.KeyboardButton("Y")
-    button3 = types.KeyboardButton("Z")
+    button1 = types.KeyboardButton("Знижка 20%")
+    button2 = types.KeyboardButton("Підсвітка")
+    button3 = types.KeyboardButton("Безкоштовна доставка")
     markup.add(button1, button2, button3)
     bot.send_message(message.chat.id, "Виберіть подарунок:", reply_markup=markup)
     bot.register_next_step_handler(message, handle_closet_gift_selection)
